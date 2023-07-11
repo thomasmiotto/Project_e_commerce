@@ -1,4 +1,4 @@
-<section id="page-log-sign-in">
+<section id="page-log-sign-in" class="box">
     <h1>sign in</h1>
     <form action="POST" id="form-signin" class="form">
         <label for="pseudo">Pseudo</label>
