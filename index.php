@@ -1,14 +1,12 @@
 <?php
 
-
 include_once __DIR__ . '/views/header.html.php';
-
+include_once __DIR__ . '/App/Controller/StaticController';
 session_start();
 
 use Controllers\StaticController;
 
 $route = $_SERVER['PATH_INFO'] ?? '/home';
-
 
 try {
     switch ($route) {
@@ -26,6 +24,10 @@ try {
 
         case '/login':
             StaticController::showLogin();
+            break;
+
+        case '/profile':
+            StaticController::showProfile();
             break;
 
         default:
