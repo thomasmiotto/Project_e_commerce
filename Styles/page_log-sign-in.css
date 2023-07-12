@@ -1,13 +1,3 @@
-#page-log-sign-in {
-    width: 300px;
-
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
-
 #page-log-sign-in > h1 {
     margin-bottom: 50px;
 }
@@ -20,26 +10,4 @@
 
 #page-log-sign-in > p > a {
     text-decoration: underline;
-}
-
-
-
-
-@media screen and (min-width: 375px) {
-    #page-log-sign-in {
-        width: 375px;
-
-    }    
-}
-
-@media screen and (min-width: 768px) {
-    #page-log-sign-in {
-        width: 400px;
-    }    
-}
-
-@media screen and (min-width: 992px) {
-    #page-log-sign-in {
-        width: 500px;
-    }
 }
