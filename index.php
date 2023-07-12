@@ -1,7 +1,9 @@
 <?php
 
+require_once __DIR__ . '/vendor/autoload.php';
+
 include_once __DIR__ . '/views/header.html.php';
-include_once __DIR__ . '/App/Controller/StaticController';
+
 session_start();
 
 use Controllers\StaticController;
