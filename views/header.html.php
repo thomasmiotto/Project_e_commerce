@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="Styles/product_in_cart.css">
     <link rel="stylesheet" href="Styles/cart.css">
     <link rel="stylesheet" href="Styles/index.css">
+    <link rel="stylesheet" href="Styles/buying_journey.css">
+
     <title>Document</title>
 </head>
 

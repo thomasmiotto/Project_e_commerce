@@ -1,6 +1,3 @@
-<link rel="stylesheet" href="../Styles/global.css">
-<link rel="stylesheet" href="../Styles/buying_journey.css">
-
 <section id="parcours" class="box">
 
 <h1>Mode de livraison</h1>
