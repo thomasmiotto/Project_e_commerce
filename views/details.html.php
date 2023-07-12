@@ -1,5 +1,5 @@
 <?php
-include_once 'header.php';
+include_once 'header.html.php';
 ?>
 
 <div class="flex flex-col md:flex-row justify-evenly detailsPageContainer">
@@ -16,4 +16,4 @@ include_once 'header.php';
 </div>
 
 <?php
-include_once 'footer.php';
+include_once 'footer.html.php';
