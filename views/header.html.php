@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="Styles/page_log-sign-in.css">
     <link rel="stylesheet" href="Styles/header_footer.css">
     <link rel="stylesheet" href="Styles/accueil.css">
+    <link rel="stylesheet" href="../Styles/product_list.css">
     <title>Document</title>
 </head>
 

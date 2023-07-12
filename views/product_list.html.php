@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="../Styles/product_list.css">
-
 <section id="cards_list">
 
     <h1>Nom de la catégorie</h1>
