@@ -25,6 +25,10 @@ border-radius: 25px;
     margin-left: 20px;
 }
 
+.searchbar {
+    border : 1px solid;
+}
+
 .circle_container{
     width : 100%;
     justify-content: space-evenly;
