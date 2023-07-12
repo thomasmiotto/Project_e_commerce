@@ -1,0 +1,16 @@
+.mode_liv, .mode_pay{
+    display: flex;
+    gap: 50px;
+}
+
+.checkbox {
+    margin-top: 20px;
+}
+
+#parcours > h1 {
+    margin: 50px 0;
+}
+
+#parcours {
+    margin-bottom: 40px;
+}
