@@ -1,0 +1,29 @@
+html, body {
+    margin: 0;
+}
+
+
+.banner {
+    height: 600px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.banner h2{
+    color: white;
+    font-size: 4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.description {
+    text-align: center;
+    max-width: 1000px;
+    width: 100%;
+    margin:0 auto;
+    padding: 1rem;
+}
