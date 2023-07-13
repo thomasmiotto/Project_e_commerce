@@ -23,7 +23,9 @@
     <header>
         <div id="top_container">
             <div id="logo_search_container">
+                <a href="/home">
                 <img src="../Assets/logo.png" alt="moto_coolos" class="logo">
+                </a>
                 <p class="logo_txt">Le meilleur de l'équipement deux roues</p>
                 <input type="text"  class="searchbar" placeholder="  Search...">
             </div>
