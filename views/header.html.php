@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="../Styles/cart.css">
     <link rel="stylesheet" href="../Styles/index.css">
     <link rel="stylesheet" href="../Styles/buying_journey.css">
+    <link rel="stylesheet" href="../Styles/contact.css">
 
     <title>Document</title>
 </head>
