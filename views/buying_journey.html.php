@@ -4,17 +4,29 @@ include_once __DIR__ . '/header.html.php';
 
 <section id="parcours" class="box">
 
+
+
     <h1>Mode de livraison</h1>
 
-    <form class="mode_liv">
-        <div><input type="radio" name="" id=""> <label for="">Livraison standard </label></div>
-        <div><input type="radio" name="" id=""> <label for="">Retrait en magasin</label></div>
-        <div><input type="radio" name="" id=""> <label for="">Point relais</label></div>
+    <form action="" method="POST" class="mode_liv">
+    <div>
+    <input type="radio" name="delivery_mode" id="standard" value="standard">
+    <label for="standard">Livraison standard</label>
+  </div>
+  <div>
+    <input type="radio" name="delivery_mode" id="pickup" value="pickup">
+    <label for="pickup">Retrait en magasin</label>
+  </div>
+  <div>
+    <input type="radio" name="delivery_mode" id="relay" value="relay">
+    <label for="relay">Point relais</label>
+  </div>
     </form>
 
     <h1>Adresse de livraison</h1>
 
     <form action="POST" id="" class="form">
+
         <label for="name">Nom</label>
         <input type="text" id="name" required>
 
@@ -31,6 +43,7 @@ include_once __DIR__ . '/header.html.php';
         <input type="password" id="phone" required>
 
         <div>
+
             <input type="checkbox" class="checkbox">
             <label for="phone">Adresse de facturation identique</label>
         </div>
@@ -46,9 +59,11 @@ include_once __DIR__ . '/header.html.php';
         <div><input type="radio" name="" id=""> <label for="">Virement bancaire</label></div>
     </form>
 
+
     <h1>Adresse de facturation</h1>
 
     <form action="POST" id="" class="form">
+
         <label for="name">Nom</label>
         <input type="text" id="name" required>
 

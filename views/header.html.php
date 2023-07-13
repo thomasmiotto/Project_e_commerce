@@ -23,6 +23,7 @@
 
 
     <header>
+
         <?php
         if ($_SESSION['name'] != null) : ?>
             <div id="top_container">
@@ -39,6 +40,7 @@
                     <a href="contact"><img src="../Assets/email.png" alt=""></a>
                     <a href="logout" class="my-auto mr-4 hover:underline p-4">logout</a>
                 </div>
+
             </div>
         <?php else : ?>
             <div id="top_container">
