@@ -1,3 +1,6 @@
+<?php
+include_once __DIR__ . '/header.html.php';
+?>
 <section id="page-log-sign-in" class="box">
     <h1>login</h1>
     <form action="/loginform" method="post" id="form-login" class="form">

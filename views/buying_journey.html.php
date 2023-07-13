@@ -1,16 +1,20 @@
+<?php
+include_once __DIR__ . '/header.html.php';
+?>
+
 <section id="parcours" class="box">
 
-<h1>Mode de livraison</h1>
+    <h1>Mode de livraison</h1>
 
-<form class="mode_liv">
-<div><input type="radio" name="" id=""> <label for="">Livraison standard </label></div>
-<div><input type="radio" name="" id=""> <label for="">Retrait en magasin</label></div>
-<div><input type="radio" name="" id=""> <label for="">Point relais</label></div>
-</form>
+    <form class="mode_liv">
+        <div><input type="radio" name="" id=""> <label for="">Livraison standard </label></div>
+        <div><input type="radio" name="" id=""> <label for="">Retrait en magasin</label></div>
+        <div><input type="radio" name="" id=""> <label for="">Point relais</label></div>
+    </form>
 
-<h1>Adresse de livraison</h1>
+    <h1>Adresse de livraison</h1>
 
-<form action="POST" id="" class="form">
+    <form action="POST" id="" class="form">
         <label for="name">Nom</label>
         <input type="text" id="name" required>
 
@@ -27,24 +31,24 @@
         <input type="password" id="phone" required>
 
         <div>
-        <input type="checkbox" class="checkbox">
-        <label for="phone">Adresse de facturation identique</label>
+            <input type="checkbox" class="checkbox">
+            <label for="phone">Adresse de facturation identique</label>
         </div>
 
     </form>
-    
+
     <h1>Mode de livraison</h1>
 
-<form class="mode_pay">
-<div><input type="radio" name="" id=""> <label for="">CB</label></div>
-<div><input type="radio" name="" id=""> <label for="">PayPal</label></div>
-<div><input type="radio" name="" id=""> <label for="">Chèque</label></div>
-<div><input type="radio" name="" id=""> <label for="">Virement bancaire</label></div>
-</form>
+    <form class="mode_pay">
+        <div><input type="radio" name="" id=""> <label for="">CB</label></div>
+        <div><input type="radio" name="" id=""> <label for="">PayPal</label></div>
+        <div><input type="radio" name="" id=""> <label for="">Chèque</label></div>
+        <div><input type="radio" name="" id=""> <label for="">Virement bancaire</label></div>
+    </form>
 
-<h1>Adresse de facturation</h1>
+    <h1>Adresse de facturation</h1>
 
-<form action="POST" id="" class="form">
+    <form action="POST" id="" class="form">
         <label for="name">Nom</label>
         <input type="text" id="name" required>
 
