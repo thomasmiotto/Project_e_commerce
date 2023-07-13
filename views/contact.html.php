@@ -7,7 +7,7 @@
         <input type="text" id="email" required>
 
         <label for="txtArea">Message</label>
-        <textarea id="txtArea" rows="10" cols="70"></textarea>
+        <textarea id="txtArea" rows="10" cols="70" class="border-2 rounded-lg"></textarea>
 
         <input type="submit" value="contact" class="btn">
     </form>

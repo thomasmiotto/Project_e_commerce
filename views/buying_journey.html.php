@@ -1,5 +1,6 @@
 <section id="parcours" class="box">
 
+
     <h1>Mode de livraison</h1>
 
     <form action="" method="POST" class="mode_liv">
@@ -20,6 +21,7 @@
     <h1>Adresse de livraison</h1>
 
     <form action="POST" id="" class="form">
+
         <label for="name">Nom</label>
         <input type="text" id="name" required>
 
@@ -36,6 +38,7 @@
         <input type="password" id="phone" required>
 
         <div>
+
             <input type="checkbox" class="checkbox">
             <label for="phone">Adresse de facturation identique</label>
         </div>
@@ -54,6 +57,7 @@
     <h1>Adresse de facturation</h1>
 
     <form action="POST" id="" class="form">
+
         <label for="name">Nom</label>
         <input type="text" id="name" required>
 
