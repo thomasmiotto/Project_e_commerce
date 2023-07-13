@@ -1,3 +1,6 @@
+<?php
+include_once __DIR__ . '/header.html.php';
+?>
 <div class="flex flex-col md:flex-row justify-evenly detailsPageContainer">
     <img src="https://picsum.photos/400/600" alt="Product image" class="md:m-20 m-10 rounded-lg shadow-2xl productImage">
     <div class="flex flex-col w-full md:w-1/2 mt-16 p-4 detailsPageRightContainer">

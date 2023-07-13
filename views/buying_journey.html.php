@@ -1,4 +1,9 @@
+<?php
+include_once __DIR__ . '/header.html.php';
+?>
+
 <section id="parcours" class="box">
+
 
 
     <h1>Mode de livraison</h1>
@@ -53,6 +58,7 @@
         <div><input type="radio" name="" id=""> <label for="">Chèque</label></div>
         <div><input type="radio" name="" id=""> <label for="">Virement bancaire</label></div>
     </form>
+
 
     <h1>Adresse de facturation</h1>
 

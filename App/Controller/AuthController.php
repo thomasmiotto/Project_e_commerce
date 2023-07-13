@@ -24,7 +24,7 @@ class AuthController
         }
 
         $_SESSION['user'] = $user;
-
+        $_SESSION['name'] = $user->name;
         $_SESSION['id'] = $user->id;
         $_SESSION['pseudo'] = $user->pseudo;
         $_SESSION['email'] = $user->email;

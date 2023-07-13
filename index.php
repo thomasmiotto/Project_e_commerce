@@ -2,7 +2,7 @@
 
 require_once __DIR__ . '/vendor/autoload.php';
 require_once __DIR__ . '/functions.php';
-include_once __DIR__ . '/views/header.html.php';
+// include_once __DIR__ . '/views/header.html.php';
 
 
 
@@ -45,6 +45,10 @@ try {
 
         case '/signupform':
             AuthController::signUp();
+            break;
+
+        case '/logout':
+            AuthController::logout();
             break;
 
 

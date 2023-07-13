@@ -24,20 +24,38 @@
 
 
     <header>
-        <div id="top_container">
-            <div id="logo_search_container">
-                <a href="/home">
-                <img src="../Assets/logo.png" alt="moto_coolos" class="logo">
-                </a>
-                <p class="logo_txt">Le meilleur de l'équipement deux roues</p>
-                <input type="text" class="searchbar" placeholder="  Search...">
+
+        <?php
+        if ($_SESSION['name'] != null) : ?>
+            <div id="top_container">
+                <div id="logo_search_container">
+                    <a href="/home">
+                        <img src="../Assets/logo.png" alt="moto_coolos" class="logo">
+                    </a>
+                    <p class="logo_txt">Le meilleur de l'équipement deux roues</p>
+                    <input type="text" class="searchbar" placeholder="  Search...">
+                </div>
+                <div class="circle_container">
+                    <a href="profile"><img src="../Assets/profil.png" alt=""></a>
+                    <a href="cart"><img src="../Assets/panier.png" alt=""></a>
+                    <a href="contact"><img src="../Assets/email.png" alt=""></a>
+                    <a href="logout" class="my-auto mr-4 hover:underline p-4">logout</a>
+                </div>
+
             </div>
-            <div class="circle_container">
-                <a href="profile"><img src="../Assets/profil.png" alt=""></a>
-                <a href="cart"><img src="../Assets/panier.png" alt=""></a>
-                <a href="contact"><img src="../Assets/email.png" alt=""></a>
+        <?php else : ?>
+            <div id="top_container">
+                <div id="logo_search_container">
+                    <img src="../Assets/logo.png" alt="moto_coolos" class="logo">
+                    <p class="logo_txt">Le meilleur de l'équipement deux roues</p>
+                    <input type="text" class="searchbar" placeholder="  Search...">
+                </div>
+                <div class="flex gap-2 m-auto mr-4">
+                    <a href="/login" class="hover:underline p-4">Login <?= $_SESSION['pseudo'] ?></a>
+                    <a href="/signup" class="hover:underline p-4">Sign up</a>
+                </div>
             </div>
-        </div>
+        <?php endif; ?>
         <div class="red_container">
             <h1>CATEGORIES</h1>
             <a href=""><img src="../Assets/menu.png" alt=""></a>

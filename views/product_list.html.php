@@ -1,3 +1,6 @@
+<?php
+include_once __DIR__ . '/header.html.php';
+?>
 <section id="cards_list">
 
     <h1>Nom de la catégorie</h1>
