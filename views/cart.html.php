@@ -5,5 +5,7 @@
         <?php include __DIR__ . "/product_in_cart.html.php"; ?>
         <?php include __DIR__ . "/product_in_cart.html.php"; ?>
         <?php include __DIR__ . "/product_in_cart.html.php"; ?>
+        <button class="btn"> Commander</button>
+
     </div>
 </section>
