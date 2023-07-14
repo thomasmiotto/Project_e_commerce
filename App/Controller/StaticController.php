@@ -25,8 +25,16 @@ class StaticController
     {
         include __DIR__ . '/../../views/signin.html.php';
     }
+    static function showAddProduct()
+    {
+        include __DIR__ . '/../../views/addProduct.html.php';
+    }
     static function showProfile()
     {
         include __DIR__ . '/../../views/profile.html.php';
+    }
+    static function showAdmin()
+    {
+        include __DIR__ . '/../../views/admin.html.php';
     }
 }

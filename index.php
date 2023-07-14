@@ -2,14 +2,12 @@
 
 require_once __DIR__ . '/vendor/autoload.php';
 require_once __DIR__ . '/functions.php';
-// include_once __DIR__ . '/views/header.html.php';
-
-
 
 session_start();
 
 use Controllers\AuthController;
 use Controllers\StaticController;
+use Controllers\ProductController;
 
 $route = $_SERVER['PATH_INFO'] ?? '/home';
 
@@ -39,6 +37,14 @@ try {
             StaticController::showSignUp();
             break;
 
+        case '/addproduct':
+            StaticController::showAddProduct();
+            break;
+
+        case '/admin':
+            StaticController::showAdmin();
+            break;
+
         case '/loginform':
             AuthController::login();
             break;
@@ -49,6 +55,10 @@ try {
 
         case '/logout':
             AuthController::logout();
+            break;
+
+        case '/addproductform':
+            ProductController::addProduct();
             break;
 
 
