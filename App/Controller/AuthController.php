@@ -3,8 +3,6 @@
 namespace Controllers;
 
 use Models\Models;
-use PDO;
-use PDOException;
 
 class AuthController
 {
@@ -28,7 +26,7 @@ class AuthController
         $_SESSION['id'] = $user->id;
         $_SESSION['pseudo'] = $user->pseudo;
         $_SESSION['email'] = $user->email;
-
+        $_SESSION['role'] = $user->role;
         redirect('/home');
     }
 

@@ -26,7 +26,7 @@
         <header>
 
             <?php
-            if ($_SESSION['name'] != null) : ?>
+            if ($_SESSION['user'] != null) : ?>
                 <div id="top_container">
                     <div id="logo_search_container">
                         <a href="/home">
@@ -39,7 +39,7 @@
                         <a href="profile"><img src="../Assets/profil.png" alt=""></a>
                         <a href="cart"><img src="../Assets/panier.png" alt=""></a>
                         <a href="contact"><img src="../Assets/email.png" alt=""></a>
-                        <a href="logout" class="my-auto mr-4 hover:underline p-4">logout</a>
+                        <a href="logout" class="my-auto mr-4 hover:underline p-4 font-bold">logout</a>
                     </div>
 
                 </div>
@@ -53,7 +53,7 @@
                         <input type="text" class="searchbar" placeholder="  Search...">
                     </div>
                     <div class="flex gap-2 m-auto mr-4">
-                        <a href="/login" class="hover:underline p-4 font-bold my-auto">Login </a>
+                        <a href="/login" class="hover:underline p-4 font-bold my-auto mr-4">Login </a>
                     </div>
                 </div>
             <?php endif; ?>
