@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Politique de confidentialité</title>
-    <link rel="stylesheet" href="./../Styles/rgpd.css">
-</head>
-<body>
+
+<section>
     <h1>Politique de confidentialité</h1>
 
     <h2>1. Introduction</h2>
@@ -50,5 +43,5 @@
 
     <h2>7. Nous contacter</h2>
     <p>Si vous avez des questions concernant cette politique de confidentialité, veuillez nous contacter à l'adresse suivante : [adresse e-mail de contact].</p>
-</body>
-</html>
+</section>
+
