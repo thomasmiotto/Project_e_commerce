@@ -3,14 +3,7 @@
 namespace Models;
 
 use PDO;
-// use Config;
-
-const
-    DB_USER = 'root',
-    DB_PSW = 'root',
-    DB_HOST = 'localhost',
-    DB_PORT = 3306,
-    DB_NAME = 'eCommerce';
+use App\Config;
 
 class Models
 {
@@ -18,9 +11,9 @@ class Models
     DBconnect(): PDO
     {
         return new PDO(
-            'mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';port=' . DB_PORT,
-            DB_USER,
-            DB_PSW
+            'mysql:host=' . Config::DB_HOST . ';dbname=' . Config::DB_NAME . ';port=' . Config::DB_PORT,
+            Config::DB_USER,
+            Config::DB_PSW
         );
     }
     static function findUser(string $identifiant)
@@ -37,5 +30,12 @@ class Models
         $db->prepare("INSERT INTO user VALUE
 (NULL, ?, ?, ?, ?)
 ")->execute([$name, $email, $password, $pseudo]);
+    }
+    static function deleteUser($id)
+    {
+        $db = static::DBconnect();
+        $db->prepare("DELETE FROM user WHERE id = ?")->execute([$id]);
+        session_destroy();
+        redirect('/home');
     }
 }

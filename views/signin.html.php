@@ -1,8 +1,7 @@
 <?php
 include_once __DIR__ . '/header.html.php';
 ?>
-<section id="page-log-sign-in" class="box">
-    <h1>sign in</h1>
+<section id="page-log-sign-in" class="box my-8">
     <form action="/signupform" method="post" id="form-signin" class="form">
         <label for="pseudo">Pseudo</label>
         <input type="text" name="pseudo" id="pseudo" required>
@@ -19,6 +18,6 @@ include_once __DIR__ . '/header.html.php';
         <label for="password-confirm">Confirmer Mot de Passe</label>
         <input type="password" name="confirm" id="password-confirm" required>
 
-        <input type="submit" value="S'inscrire" class="btn">
+        <input type="submit" value="S'inscrire" class="bg-red-600 text-white">
     </form>
 </section>
