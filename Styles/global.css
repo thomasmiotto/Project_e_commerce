@@ -6,54 +6,78 @@
 } */
 
 test {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 a {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
 
-
-.btn {
-    background-color: #D60505;
-    border-radius: 100px;
-    border: none;
-
-    padding: 5px 0;
-
-    color: #FFFFFF;
+.redButtons {
+  background-color: #d60505;
+  border-radius: 100px;
+  border: 2px;
+  padding: 5px 0;
+  color: #ffffff;
 }
 
 /* form */
 .form {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 10px;
-
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
 }
 
 .form > input {
-    border-radius: 100px;
-    border: 1px solid black;
-    padding: 10px;
+  border-radius: 100px;
+  border: 1px solid black;
+  padding: 10px;
 }
 
 .form > input[type="submit"] {
-    width: 200px;
-    margin-top: 60px;
-    align-self: center;
+  width: 200px;
+  margin-top: 60px;
+  align-self: center;
 
-    font-weight: bolder;
+  font-weight: bolder;
 }
 /* ---------------- */
+
+/* Section box */
+.box {
+  width: 300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+@media screen and (min-width: 375px) {
+  .box {
+    width: 375px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .box {
+    width: 400px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .box {
+    width: 500px;
+  }
+}
+
+/* --------------------- */

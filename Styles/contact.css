@@ -1,0 +1,16 @@
+#txtArea {
+  border: 1px solid;
+  border-radius: 15px;
+}
+
+h1 {
+  color: black;
+}
+
+#envoyer {
+  background-color: #d60505;
+  border-radius: 100px;
+  border: none;
+  padding: 5px 0;
+  color: #ffffff;
+}
