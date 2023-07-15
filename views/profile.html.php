@@ -7,26 +7,28 @@ use Models\Models;
 if (isset($_POST['supprimer'])) {
     Models::deleteUser($_SESSION['id']);
 }
-if (isset($_POST['modifier'])) {
-    echo "This is Button2 that is selected";
-}
 
 ?>
 <div class="flex flex-col text-center m-4 mt-12 flex-grow">
-    <h1>Mon Compte</h1>
-    <div class="flex flex-row m-4 justify-center p-4 border-2 rounded-lg md:w-1/3 mx-auto justify-between mt-8">
-        <i class="fa fa-user-circle my-auto" aria-hidden="true"></i>
-        <h1 class="my-auto"><?= $_SESSION['name'] ?></h1>
-        <div class="flex flex-col gap-1 my-auto">
+    <h1 class="text-xl">Mon Compte</h1>
+    <div class="m-4justify-center p-4 border-2 rounded-lg md:w-1/3 m-auto mt-8">
+        <h1 class="my-4">Nom: <?= $_SESSION['name'] ?></h1>
+        <p class="my-4">Email: <?= $_SESSION['email'] ?> </p>
+        <p class="my-4">Pseudo: <?= $_SESSION['pseudo'] ?></p>
+    </div>
+    <div class="m-auto w-min">
+        <?php
+        if ($_SESSION['role'] == 'user') : ?>
             <form method="post" class="flex flex-col">
-                <input type="submit" name="supprimer" onclick="return confirm('Are You Sure ?')" value="Supprimer" class="redButton" />
-                <input type="submit" name="modifier" value="Modifier" class="redButton" />
+                <input type="submit" name="supprimer" onclick="return confirm('Etes-vous sûrs ? ')" value="Supprimer Compte" class="bg-red-600 p-4 rounded-[100px] text-white hover:cursor-pointer hover:bg-red-400" />
             </form>
-        </div>
+        <?php endif; ?>
+        <?php
+        if ($_SESSION['role'] == 'admin') : ?>
+            <form action="/addproduct" class="flex flex-col">
+                <input type="submit" value="Add product" class="bg-red-600 p-4 rounded-[100px] text-white hover:cursor-pointer hover:bg-red-400" />
+            </form>
+        <?php endif; ?>
     </div>
-    <div>
-        <h2>Mes information</h2>
-        <p>email: <?= $_SESSION['email'] ?> </p>
-        <p>Pseudo: <?= $_SESSION['pseudo'] ?></p>
-    </div>
+
 </div>

@@ -60,6 +60,13 @@ try {
         case '/addproductform':
             ProductController::addProduct();
             break;
+        case '/addcategoryform':
+            ProductController::addCategory();
+            break;
+
+        case '/category':
+            StaticController::showCategory();
+            break;
 
 
         default:

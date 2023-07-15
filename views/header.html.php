@@ -26,6 +26,9 @@
         <header>
 
             <?php
+
+            use Controllers\ProductController;
+
             if ($_SESSION['user'] != null) : ?>
                 <div id="top_container">
                     <div id="logo_search_container">
@@ -62,10 +65,13 @@
                 <a href=""><img src="../Assets/menu.png" alt=""></a>
             </div>
             <ul>
-                <li><a href="">casques</a></li>
-                <li><a href="">accesoires</a></li>
-                <li><a href="">pièces moto</a></li>
-                <li><a href="">pneus</a></li>
+                <?php
+                foreach (ProductController::listCategories() as $c) : ?>
+                    <li><a href="/category?category=<?= $c->id ?>">
+                            <?= $c->name ?>
+                        </a>
+                    </li>
+                <?php endforeach; ?>
             </ul>
             </nav>
         </header>
