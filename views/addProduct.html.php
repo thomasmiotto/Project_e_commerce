@@ -2,7 +2,7 @@
 include_once __DIR__ . '/header.html.php';
 ?>
 <section class="box my-8">
-    <form action="/addproductform" method="post" class="form">
+    <form action="/addproductform" method="post" class="form" enctype="multipart/form-data">
         <label for="name">Name</label>
         <input type="text" name="name" required>
 
@@ -19,7 +19,7 @@ include_once __DIR__ . '/header.html.php';
         <input type="number" name="stock" required>
 
         <label for="image">Image</label>
-        <input type="text" name="image">
+        <input type="file" name="productImage" accept="image/*">
 
         <input type="submit" value="Add product" class="bg-red-600 text-white">
     </form>
