@@ -7,14 +7,18 @@ use Models\Models;
 if (isset($_POST['supprimer'])) {
     Models::deleteUser($_SESSION['id']);
 }
-
 ?>
 <div class="flex flex-col text-center m-4 mt-12 flex-grow">
     <h1 class="text-xl">Mon Compte</h1>
     <div class="m-4justify-center p-4 border-2 rounded-lg md:w-1/3 m-auto mt-8">
-        <h1 class="my-4">Nom: <?= $_SESSION['name'] ?></h1>
+        <div class="flex-row">
+            <h1 class="my-4">Nom: <?= $_SESSION['name'] ?></h1>
+        </div>
         <p class="my-4">Email: <?= $_SESSION['email'] ?> </p>
-        <p class="my-4">Pseudo: <?= $_SESSION['pseudo'] ?></p>
+        <div class="flex-row mb-8">
+            <p class="my-4">Pseudo: <?= $_SESSION['pseudo'] ?></p>
+        </div>
+        <a href="/modifyprofile" class="hover:cursor-pointer italic hover:underline" />Modifier Compte</a>
     </div>
     <div class="m-auto w-min">
         <?php

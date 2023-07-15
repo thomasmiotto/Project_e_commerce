@@ -3,7 +3,6 @@
 namespace Models;
 
 use PDO;
-use App\Config;
 use BaseModels\BaseModels;
 
 class Models
@@ -30,11 +29,10 @@ class Models
         unset($_SESSION['user']);
         redirect('/home');
     }
-    static function updateUser(string $name, string $email, string $password, string $pseudo, int $id)
+    static function updateUser(string $name, string $pseudo, int $id)
     {
         $db = BaseModels::DBconnect();
-        $db->prepare("UPDATE user SET `name` = ?, email=?, password =?, pseudo=?  WHERE id = ?")->execute([$name, $email, $password, $pseudo, $id]);
-        redirect('/profile');
+        $db->prepare("UPDATE user SET `name` = ?, pseudo=?  WHERE id = ?")->execute([$name, $pseudo, $id]);
     }
     static function createProduct(string $name, float $price, string $description, int $tva_id, int $stock, ?string $image)
     {
@@ -82,5 +80,12 @@ class Models
         $db = BaseModels::DBconnect();
         $call = $db->query("SELECT * from category");
         return $call->fetchAll(PDO::FETCH_OBJ);
+    }
+    static function findCategory(int $id)
+    {
+        $db = BaseModels::DBconnect();
+        $call = $db->prepare("SELECT * FROM category WHERE id = ?");
+        $call->execute([$id]);
+        return $call->fetch(PDO::FETCH_OBJ);
     }
 }

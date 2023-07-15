@@ -68,6 +68,17 @@ try {
             StaticController::showCategory();
             break;
 
+        case '/details':
+            StaticController::showDetails();
+            break;
+
+        case '/modifyprofile':
+            StaticController::showModifyProfile();
+            break;
+
+        case '/modifyprofileform':
+            AuthController::modifyUser();
+            break;
 
         default:
             //error

@@ -68,7 +68,7 @@
                 <?php
                 foreach (ProductController::listCategories() as $c) : ?>
                     <li><a href="/category?category=<?= $c->id ?>">
-                            <?= $c->name ?>
+                            <?= strtoupper($c->name) ?>
                         </a>
                     </li>
                 <?php endforeach; ?>

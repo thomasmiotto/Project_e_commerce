@@ -3,9 +3,9 @@ include_once __DIR__ . '/header.html.php';
 ?>
 
 <section id="page-log-sign-in" class="box flex-grow">
-    <h1>login</h1>
+    <h1></h1>
     <form action="/loginform" method="post" id="form-login" class="form">
-        <label for="username">E-mail / Pseudo</label>
+        <label for="username">E-mail </label>
         <input type="text" name="login" id="username" required>
         <label for="password">Mot de Passe</label>
         <input type="password" name="password" id="password" required>
