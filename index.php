@@ -9,12 +9,12 @@ use App\Controllers\AuthController;
 use App\Controllers\StaticController;
 use App\Controllers\ProductController;
 use App\Controllers\CartController;
+use App\Models\Category;
 
 $route = '/';
 
 if (isset($_SERVER['PATH_INFO'])) {
     $route = $_SERVER['PATH_INFO'];
-
 } else if (isset($_SERVER['REDIRECT_URL'])) {
     $route = $_SERVER['REDIRECT_URL'];
 }
@@ -98,6 +98,10 @@ try {
 
         case '/removecart':
             CartController::removeProductFromCart();
+            break;
+
+        case '/removecategoryform':
+            ProductController::removeCategory();
             break;
 
         default:
