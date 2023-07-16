@@ -1,12 +1,12 @@
 <?php
 
-namespace Controllers;
+namespace App\Controllers;
 
-use Models\Models;
+use App\Models\Product;
+use App\Models\Category;
 
 class ProductController
 {
-
     static function addProduct()
     {
         if ($_SESSION['role'] == 'admin') {
@@ -25,9 +25,9 @@ class ProductController
                 redirect('/addproduct');
             }
 
-            $image = uploader($_FILES['productImage'], __DIR__ . '/../../Assets/uploaded');
+            $image = uploader($_FILES['productImage'], __DIR__ . '/../../public/assets/uploaded');
 
-            Models::createProduct(
+            Product::createProduct(
                 htmlspecialchars($_POST['name']),
                 (float)$_POST['price'],
                 htmlspecialchars($_POST['description']),
@@ -41,13 +41,14 @@ class ProductController
             redirect('/home');
         }
     }
+
     static function addCategory()
     {
         if ($_SESSION['role'] == 'admin') {
             if (empty($_POST['category'])) {
                 redirect('/addproduct');
             }
-            Models::createCategory(
+            Category::createCategory(
                 htmlspecialchars($_POST['category'])
             );
 
@@ -56,12 +57,14 @@ class ProductController
             redirect('/home');
         }
     }
+
     static function listCategories()
     {
-        return Models::getCategories();
+        return Category::getCategories();
     }
+
     static function listProducts(int $id)
     {
-        return Models::getProductsByCategory($id);
+        return Category::getProductsByCategory($id);
     }
 }

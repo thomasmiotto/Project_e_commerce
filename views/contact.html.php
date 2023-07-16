@@ -1,6 +1,7 @@
 <?php
 include_once __DIR__ . '/header.html.php';
 ?>
+
 <section class="md:w-1/2 mx-auto my-8 contact flex-grow">
     <h1>Nous contacter</h1>
     <form action="POST" id="form-signin" class="form">

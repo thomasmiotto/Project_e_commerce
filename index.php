@@ -5,15 +5,22 @@ require_once __DIR__ . '/functions.php';
 
 session_start();
 
-use Controllers\AuthController;
-use Controllers\StaticController;
-use Controllers\ProductController;
+use App\Controllers\AuthController;
+use App\Controllers\StaticController;
+use App\Controllers\ProductController;
 
-$route = $_SERVER['PATH_INFO'] ?? '/home';
+$route = '/';
+
+if (isset($_SERVER['PATH_INFO'])) {
+    $route = $_SERVER['PATH_INFO'];
+
+} else if ($_SERVER['REQUEST_URI']) {
+    $route = $_SERVER['REQUEST_URI'];
+}
 
 try {
     switch ($route) {
-        case '/home':
+        case '/':
             StaticController::showHome();
             break;
 

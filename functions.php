@@ -5,6 +5,7 @@ function redirect($url)
     header('location: ' . $url);
     exit;
 }
+
 function uploader(array $file, string $dossierDestination): string
 {
     if (!is_dir($dossierDestination)) {

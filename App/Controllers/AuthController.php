@@ -1,19 +1,18 @@
 <?php
 
-namespace Controllers;
+namespace App\Controllers;
 
-use Models\Models;
+use App\Models\User;
 
 class AuthController
 {
     static function login()
     {
-
         if (empty($_POST['login']) || empty($_POST['password'])) {
             redirect('/login');
         }
 
-        $user = Models::findUser($_POST['login']);
+        $user = User::findUser($_POST['login']);
         if (
             $user === false
             || !password_verify($_POST['password'], $user->password)
@@ -56,15 +55,15 @@ class AuthController
             || filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) === false
 
             // if user exists
-            || !empty(Models::findUser($_POST['email']))
+            || !empty(User::findUser($_POST['email']))
         ) {
             redirect('/signup');
-            die;
+            die();
         }
 
         $psw = password_hash($_POST['password'], PASSWORD_BCRYPT);
 
-        Models::newUser(
+        User::newUser(
             htmlspecialchars($_POST['name']),
             $_POST['email'],
             $psw,
@@ -73,14 +72,15 @@ class AuthController
 
         redirect('/login');
     }
+
     static function modifyUser()
     {
-        Models::updateUser(
+        User::updateUser(
             htmlspecialchars($_POST['name']),
             htmlspecialchars($_POST['pseudo']),
             $_SESSION['id']
         );
-        $user = Models::findUser($_SESSION['email']);
+        $user = User::findUser($_SESSION['email']);
         $_SESSION['user'] = $user;
         $_SESSION['name'] = $user->name;
         $_SESSION['pseudo'] = $user->pseudo;

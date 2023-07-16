@@ -1,14 +1,13 @@
 <?php
 
-namespace BaseModels;
+namespace App\Models;
 
 use PDO;
 use App\Config;
 
-class BaseModels
+class BaseModel
 {
-    static function
-    DBconnect(): PDO
+    static function DBconnect(): PDO
     {
         return new PDO(
             'mysql:host=' . Config::DB_HOST . ';dbname=' . Config::DB_NAME . ';port=' . Config::DB_PORT,

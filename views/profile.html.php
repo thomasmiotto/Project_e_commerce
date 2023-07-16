@@ -1,13 +1,13 @@
 <?php
 include_once __DIR__ . '/header.html.php';
 
-use Models\Models;
-
+use App\Models\User;
 
 if (isset($_POST['supprimer'])) {
-    Models::deleteUser($_SESSION['id']);
+    User::deleteUser($_SESSION['id']);
 }
 ?>
+
 <div class="flex flex-col text-center m-4 mt-12 flex-grow">
     <h1 class="text-xl">Mon Compte</h1>
     <div class="m-4justify-center p-4 border-2 rounded-lg md:w-1/3 m-auto mt-8">
@@ -34,5 +34,4 @@ if (isset($_POST['supprimer'])) {
             </form>
         <?php endif; ?>
     </div>
-
 </div>

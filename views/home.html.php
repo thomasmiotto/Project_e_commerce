@@ -2,7 +2,7 @@
     include_once __DIR__ . '/header.html.php';
     ?>
     <section>
-        <div class="banner" style="background-image:url('/Assets/home-img.png')">
+        <div class="banner" style="background-image:url('/public/assets/home-img.png')">
             <h2>Soldes d'été jusqu'à -70%</h2>
         </div>
         <div class="description">
