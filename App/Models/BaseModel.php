@@ -1,5 +1,6 @@
 <?php
 
+
 namespace App\Models;
 
 use PDO;
@@ -16,6 +17,7 @@ class BaseModel
                 Config::DB_USER,
                 Config::DB_PSW
             );
+
         } catch (Exception $e) {
             die($e->getMessage());
         }

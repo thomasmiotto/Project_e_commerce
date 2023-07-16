@@ -2,73 +2,76 @@
   include_once __DIR__ . '/header.html.php';
 ?>
 
+
 <section id="parcours" class="box">
   <h1>Mode de livraison</h1>
-
-  <form action="" method="POST" class="mode_liv">
+<form action="/addbuyingform" method="post">
+  <div class="mode_liv">
     <div>
-      <input type="radio" name="delivery_mode" id="standard" value="standard">
+      <input type="radio" name="standard" id="standard" value="standard">
       <label for="standard">Livraison standard</label>
     </div>
     <div>
-      <input type="radio" name="delivery_mode" id="pickup" value="pickup">
+      <input type="radio" name="pickup" id="pickup" value="pickup">
       <label for="pickup">Retrait en magasin</label>
     </div>
     <div>
-      <input type="radio" name="delivery_mode" id="relay" value="relay">
+      <input type="radio" name="relay" id="relay" value="relay">
       <label for="relay">Point relais</label>
     </div>
-  </form>
+</div>
 
   <h1>Adresse de livraison</h1>
 
-  <form action="POST" id="" class="form">
-    <label for="name">Nom</label>
-    <input type="text" id="name" required>
+  <div class="form">
+    <label for="name_del">Nom</label>
+    <input type="text" id="name_del" required>
 
-    <label for="adresse">Adresse</label>
-    <input type="text" id="adresse" required>
+    <label for="adresse_del">Adresse</label>
+    <input type="text" id="adresse_del" required>
 
-    <label for="cp">Code Postal</label>
-    <input type="text" id="cp" required>
+    <label for="cp_del">Code Postal</label>
+    <input type="number" id="cp_del" required>
 
-    <label for="ville">Ville</label>
-    <input type="text" id="ville" required>
+    <label for="ville_del">Ville</label>
+    <input type="text" id="ville_del" required>
 
-    <label for="phone">Numéro de téléphone</label>
-    <input type="password" id="phone" required>
+    <label for="phone_del">Numéro de téléphone</label>
+    <input type="number" id="phone_del" required>
 
     <div>
       <input type="checkbox" class="checkbox">
       <label for="phone">Adresse de facturation identique</label>
     </div>
-  </form>
+</div>
 
   <h1>Mode de livraison</h1>
 
-  <form class="mode_pay">
-    <div><input type="radio" name="" id=""> <label for="">CB</label></div>
-    <div><input type="radio" name="" id=""> <label for="">PayPal</label></div>
-    <div><input type="radio" name="" id=""> <label for="">Chèque</label></div>
-    <div><input type="radio" name="" id=""> <label for="">Virement bancaire</label></div>
-  </form>
+  <div class="mode_pay">
+    <div><input type="radio" name="cb" id="cb"> <label for="cb">CB</label></div>
+    <div><input type="radio" name="PayPal" id="PayPal"> <label for="PayPal">PayPal</label></div>
+    <div><input type="radio" name="Cheque" id="Cheque"> <label for="Cheque">Chèque</label></div>
+    <div><input type="radio" name="Virement" id="Virement"> <label for="Virement">Virement bancaire</label></div>
+</div>
 
   <h1>Adresse de facturation</h1>
 
-  <form action="POST" id="" class="form">
+  <div class="form">
     <label for="name">Nom</label>
-    <input type="text" id="name" required>
+    <input type="text" id="name_pay" required>
 
     <label for="adresse">Adresse</label>
-    <input type="text" id="adresse" required>
+    <input type="text" id="adresse_pay" required>
 
     <label for="cp">Code Postal</label>
-    <input type="text" id="cp" required>
+    <input type="number" id="cp_pay" required>
 
     <label for="ville">Ville</label>
-    <input type="text" id="ville" required>
+    <input type="text" id="ville_pay" required>
 
     <label for="phone">Numéro de téléphone</label>
-    <input type="password" id="phone" required>
+    <input type="number" id="phone_pay" required>
+  </div>
   </form>
+  <button type="submit">Submit</button>
 </section>

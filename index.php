@@ -9,7 +9,9 @@ use App\Controllers\AuthController;
 use App\Controllers\StaticController;
 use App\Controllers\ProductController;
 use App\Controllers\CartController;
+use App\Controllers\BuyingJourneyController;
 use App\Models\Category;
+
 
 $route = '/';
 
@@ -98,6 +100,10 @@ try {
 
         case '/removecart':
             CartController::removeProductFromCart();
+            break;
+            
+        case '/addbuyingform':
+            BuyingJourneyController::addInfoBuying();
             break;
 
         case '/removecategoryform':
