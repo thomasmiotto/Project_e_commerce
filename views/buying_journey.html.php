@@ -5,7 +5,6 @@
 
 <section id="parcours" class="box">
   <h1>Mode de livraison</h1>
-  <?php if ($_SESSION['role'] == 'admin') : ?>
 <form action="/addbuyingform" method="post">
   <div class="mode_liv">
     <div>
@@ -25,20 +24,20 @@
   <h1>Adresse de livraison</h1>
 
   <div class="form">
-    <label for="name">Nom</label>
+    <label for="name_del">Nom</label>
     <input type="text" id="name_del" required>
 
-    <label for="adresse">Adresse</label>
+    <label for="adresse_del">Adresse</label>
     <input type="text" id="adresse_del" required>
 
-    <label for="cp">Code Postal</label>
-    <input type="text" id="cp_del" required>
+    <label for="cp_del">Code Postal</label>
+    <input type="number" id="cp_del" required>
 
-    <label for="ville">Ville</label>
+    <label for="ville_del">Ville</label>
     <input type="text" id="ville_del" required>
 
-    <label for="phone">Numéro de téléphone</label>
-    <input type="password" id="phone_del" required>
+    <label for="phone_del">Numéro de téléphone</label>
+    <input type="number" id="phone_del" required>
 
     <div>
       <input type="checkbox" class="checkbox">
@@ -65,17 +64,14 @@
     <input type="text" id="adresse_pay" required>
 
     <label for="cp">Code Postal</label>
-    <input type="text" id="cp_pay" required>
+    <input type="number" id="cp_pay" required>
 
     <label for="ville">Ville</label>
     <input type="text" id="ville_pay" required>
 
     <label for="phone">Numéro de téléphone</label>
-    <input type="password" id="phone_pay" required>
+    <input type="number" id="phone_pay" required>
   </div>
   </form>
   <button type="submit">Submit</button>
-  <?php else : ?>
-        <h1 class="my-12 font-xl "> Permission denied.</h1>
-    <?php endif; ?>
 </section>

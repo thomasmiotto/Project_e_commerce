@@ -21,7 +21,7 @@ class BuyingJourneyController
                 || empty($_POST['phone_pay'])
 
             ) {
-                redirect('/addproduct');
+                redirect('/');
             }
         }
     }
