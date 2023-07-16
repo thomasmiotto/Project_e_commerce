@@ -1,4 +1,7 @@
 <?php
+
+use App\Controllers\ProductController;
+
 include_once __DIR__ . '/header.html.php';
 ?>
 <section class="box my-8 flex-grow">
@@ -20,6 +23,13 @@ include_once __DIR__ . '/header.html.php';
                 <option value="3">8.5%</option>
                 <option value="4">10%</option>
                 <option value="5">20%</option>
+            </select>
+
+            <label for="category">Category</label>
+            <select name="category" required>
+                <?php foreach (ProductController::listCategories() as $c) : ?>
+                    <option value="<?= $c->id ?>"><?= $c->name ?></option>
+                <?php endforeach; ?>
             </select>
 
             <label for="stock">Stock</label>

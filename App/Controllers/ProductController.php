@@ -16,6 +16,7 @@ class ProductController
                 || empty($_POST['description'])
                 || empty($_POST['tva_id'])
                 || empty($_POST['stock'])
+                || empty($_POST['category'])
 
                 || !str_starts_with($_FILES['productImage']['type'], 'image/')
                 || $_FILES['productImage']['error'] !== 0
@@ -35,6 +36,10 @@ class ProductController
                 (int)$_POST['stock'],
                 $image
             );
+
+            $allProducts = Product::getAllProducts();
+            $myLastElement = $allProducts[array_key_last($allProducts)];
+            Product::setProductCategory($myLastElement->id, $_POST['category']);
 
             redirect('/profile');
         } else {
