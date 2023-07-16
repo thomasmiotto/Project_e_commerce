@@ -62,6 +62,18 @@ class ProductController
             redirect('/home');
         }
     }
+    static function removeCategory()
+    {
+        $idCat = intval(htmlspecialchars($_GET['category']));
+        Product::removeProductCategory("category_id", $idCat);
+        Category::removeCategory($idCat);
+    }
+
+    static function removeProduct($id)
+    {
+        Product::removeProductCategory("product_id", $id);
+        Product::deleteProduct($id);
+    }
 
     static function listCategories()
     {

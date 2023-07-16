@@ -28,4 +28,10 @@ class Category
         $call->execute([$id]);
         return $call->fetch(PDO::FETCH_OBJ);
     }
+    static function removeCategory(int $id)
+    {
+        $db = BaseModel::DBconnect();
+        $db->prepare("DELETE FROM category WHERE id = ?")->execute([$id]);
+        redirect('/addproduct');
+    }
 }
