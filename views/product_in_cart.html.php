@@ -16,8 +16,11 @@ if (isset($product)) {
         </div>
         <?php
         echo '<p>' . $product->price . ' $</p>';
-        echo '<button>x</button>';
         ?>
+        <form action="/removecart" method="post">
+            <input type="hidden" name="product_id" value="<?php echo $product->id ?>">
+            <input type="submit" value="x">
+        </form>
     </div>
 
 <?php

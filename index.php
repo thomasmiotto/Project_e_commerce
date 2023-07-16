@@ -96,6 +96,10 @@ try {
             CartController::addProductToCart();
             break;
 
+        case '/removecart':
+            CartController::removeProductFromCart();
+            break;
+
         default:
             //error
     }
