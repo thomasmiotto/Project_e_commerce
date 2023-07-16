@@ -8,6 +8,7 @@ session_start();
 use App\Controllers\AuthController;
 use App\Controllers\StaticController;
 use App\Controllers\ProductController;
+use App\Controllers\CartController;
 
 $route = '/';
 
@@ -89,6 +90,10 @@ try {
 
         case '/modifyprofileform':
             AuthController::modifyUser();
+            break;
+
+        case '/addcart':
+            CartController::addProductToCart();
             break;
 
         default:

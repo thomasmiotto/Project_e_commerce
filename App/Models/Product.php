@@ -32,6 +32,20 @@ class Product
         return $call->fetchall(PDO::FETCH_OBJ);
     }
 
+    static function getProductsByIds(array $ids)
+    {
+        $products = [];
+        $db = BaseModel::DBconnect();
+
+        foreach ($ids as $id) {
+            $call = $db->prepare("SELECT * FROM product WHERE id = ?");
+            $call->execute([$id]);
+            array_push($products, $call->fetch(PDO::FETCH_OBJ));
+        }
+
+        return $products;
+    }
+
     static function deleteProduct($id)
     {
         $db = BaseModel::DBconnect();
