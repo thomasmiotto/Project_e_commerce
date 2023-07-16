@@ -73,4 +73,17 @@ class AuthController
 
         redirect('/login');
     }
+    static function modifyUser()
+    {
+        Models::updateUser(
+            htmlspecialchars($_POST['name']),
+            htmlspecialchars($_POST['pseudo']),
+            $_SESSION['id']
+        );
+        $user = Models::findUser($_SESSION['email']);
+        $_SESSION['user'] = $user;
+        $_SESSION['name'] = $user->name;
+        $_SESSION['pseudo'] = $user->pseudo;
+        redirect('/profile');
+    }
 }

@@ -60,7 +60,25 @@ try {
         case '/addproductform':
             ProductController::addProduct();
             break;
+        case '/addcategoryform':
+            ProductController::addCategory();
+            break;
 
+        case '/category':
+            StaticController::showCategory();
+            break;
+
+        case '/details':
+            StaticController::showDetails();
+            break;
+
+        case '/modifyprofile':
+            StaticController::showModifyProfile();
+            break;
+
+        case '/modifyprofileform':
+            AuthController::modifyUser();
+            break;
 
         default:
             //error

@@ -37,4 +37,16 @@ class StaticController
     {
         include __DIR__ . '/../../views/admin.html.php';
     }
+    static function showCategory()
+    {
+        include __DIR__ . '/../../views/category.html.php';
+    }
+    static function showDetails()
+    {
+        include __DIR__ . '/../../views/details.html.php';
+    }
+    static function showModifyProfile()
+    {
+        include __DIR__ . '/../../views/modifyProfile.html.php';
+    }
 }
