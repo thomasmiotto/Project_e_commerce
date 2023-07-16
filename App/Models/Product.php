@@ -14,12 +14,25 @@ class Product
             ->execute([$name, $price, $description, $tva_id, $stock, $image]);
     }
 
+    static function setProductCategory(int $product_id, int $category_id)
+    {
+        $db = BaseModel::DBconnect();
+        $db->prepare("INSERT INTO category_product VALUE(NULL,?, ?)")
+            ->execute([$product_id, $category_id]);
+    }
+
     static function getProduct(int $id)
     {
         $db = BaseModel::DBconnect();
         $call = $db->prepare("SELECT * FROM product WHERE id = ?");
         $call->execute([$id]);
         return $call->fetch(PDO::FETCH_OBJ);
+    }
+    static function getAllProducts()
+    {
+        $db = BaseModel::DBconnect();
+        $call = $db->query("SELECT * from product");
+        return $call->fetchAll(PDO::FETCH_OBJ);
     }
 
     static function getProductsByCategory(int $id)
