@@ -15,7 +15,7 @@ $route = '/';
 if (isset($_SERVER['PATH_INFO'])) {
     $route = $_SERVER['PATH_INFO'];
 
-} else if ($_SERVER['REDIRECT_URL']) {
+} else if (isset($_SERVER['REDIRECT_URL'])) {
     $route = $_SERVER['REDIRECT_URL'];
 }
 
