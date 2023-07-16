@@ -1,9 +1,15 @@
 <?php
+
+use App\Controllers\ProductController;
 use App\Models\Product;
 
 include_once __DIR__ . '/header.html.php';
 $idProd = intval(htmlspecialchars($_GET["product"]));
 $product = Product::getProduct($idProd);
+
+if (isset($_POST['removeProduct'])) {
+    ProductController::removeProduct($idProd);
+}
 ?>
 
 <div class="flex flex-col md:flex-row justify-evenly flex-grow">
@@ -12,7 +18,7 @@ $product = Product::getProduct($idProd);
     <div class="flex flex-col w-full md:w-1/2 mt-16 p-4">
         <div class="flex flex-col w-full p-4">
             <h1 class="mt-12 text-bold text-xl text-center"><?= $product->name ?> </h1>
-            <h3 class="mt-4 text-l text-center"><?= $product->price ?> </h3>
+            <h3 class="mt-4 text-l text-center"><?= $product->price ?> €</h3>
 
             <form class="form" action="/addcart" method="post">
                 <input type="hidden" name="product_id" value="<?php echo $product->id; ?>">
@@ -22,5 +28,11 @@ $product = Product::getProduct($idProd);
         <div class="flex flex-col w-full border-2 mt-8 shadow-xl rounded-lg mx-auto p-8 text-lg">
             <p class="m-8 text-xl text-center"><?= $product->description ?> </p>
         </div>
+        <?php
+        if ($_SESSION['role'] == 'admin') : ?>
+            <form method="post" class="form">
+                <input type="submit" value="Remove product" name="removeProduct" onclick="return confirm('Etes-vous sûrs ? ')" class="bg-red-600 text-white">
+            </form>
+        <?php endif; ?>
     </div>
 </div>

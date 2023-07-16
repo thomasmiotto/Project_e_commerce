@@ -17,9 +17,9 @@ class BaseModel
                 Config::DB_USER,
                 Config::DB_PSW
             );
-        }
-        catch(Exception $e){
+
+        } catch (Exception $e) {
             die($e->getMessage());
-        }   
-     }
+        }
+    }
 }

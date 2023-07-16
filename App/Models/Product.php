@@ -4,6 +4,7 @@ namespace App\Models;
 
 use PDO;
 use App\Models\BaseModel;
+use Exception;
 
 class Product
 {
@@ -14,12 +15,31 @@ class Product
             ->execute([$name, $price, $description, $tva_id, $stock, $image]);
     }
 
+    static function setProductCategory(int $product_id, int $category_id)
+    {
+        $db = BaseModel::DBconnect();
+        $db->prepare("INSERT INTO category_product VALUE(NULL,?, ?)")
+            ->execute([$product_id, $category_id]);
+    }
+    static function removeProductCategory(string $catorprodid, int $category_id)
+    {
+        $db = BaseModel::DBconnect();
+        $db->prepare("DELETE FROM category_product WHERE $catorprodid = ?")
+            ->execute([$category_id]);
+    }
+
     static function getProduct(int $id)
     {
         $db = BaseModel::DBconnect();
         $call = $db->prepare("SELECT * FROM product WHERE id = ?");
         $call->execute([$id]);
         return $call->fetch(PDO::FETCH_OBJ);
+    }
+    static function getAllProducts()
+    {
+        $db = BaseModel::DBconnect();
+        $call = $db->query("SELECT * from product");
+        return $call->fetchAll(PDO::FETCH_OBJ);
     }
 
     static function getProductsByCategory(int $id)
@@ -42,15 +62,18 @@ class Product
             $call->execute([$id]);
             array_push($products, $call->fetch(PDO::FETCH_OBJ));
         }
-
         return $products;
     }
 
     static function deleteProduct($id)
     {
-        $db = BaseModel::DBconnect();
-        $db->prepare("DELETE FROM product WHERE id = ?")->execute([$id]);
-        redirect('/home');
+        try {
+            $db = BaseModel::DBconnect();
+            $db->prepare("DELETE FROM product WHERE id = ?")->execute([$id]);
+            redirect('/home');
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
     }
 
     static function updateProduct(string $name, float $price, string $description, int $tva_id, int $stock, ?string $image, $id)

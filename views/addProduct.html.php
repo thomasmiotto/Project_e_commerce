@@ -1,5 +1,12 @@
 <?php
+
+use App\Controllers\ProductController;
+
 include_once __DIR__ . '/header.html.php';
+
+if (isset($_POST['removeCategory'])) {
+    redirect("/removecategoryform?category=" . $_POST['category']);
+}
 ?>
 <section class="box my-8 flex-grow">
     <?php if ($_SESSION['role'] == 'admin') : ?>
@@ -22,6 +29,13 @@ include_once __DIR__ . '/header.html.php';
                 <option value="5">20%</option>
             </select>
 
+            <label for="category">Category</label>
+            <select name="category" required>
+                <?php foreach (ProductController::listCategories() as $c) : ?>
+                    <option value="<?= $c->id ?>"><?= $c->name ?></option>
+                <?php endforeach; ?>
+            </select>
+
             <label for="stock">Stock</label>
             <input type="number" name="stock" required>
 
@@ -36,6 +50,16 @@ include_once __DIR__ . '/header.html.php';
             <input type="text" name="category" required>
 
             <input type="submit" value="Add category" class="bg-red-600 text-white">
+        </form>
+        <form method="post" class="form">
+
+            <label for="category">Category</label>
+            <select name="category" required>
+                <?php foreach (ProductController::listCategories() as $c) : ?>
+                    <option value="<?= $c->id ?>"><?= $c->name ?></option>
+                <?php endforeach; ?>
+            </select>
+            <input type="submit" value="Remove category" name="removeCategory" onclick="return confirm('Etes-vous sûrs ? ')" class="bg-red-600 text-white">
         </form>
     <?php else : ?>
         <h1 class="my-12 font-xl "> Permission denied.</h1>
