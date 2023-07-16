@@ -65,6 +65,6 @@ class ProductController
 
     static function listProducts(int $id)
     {
-        return Category::getProductsByCategory($id);
+        return Product::getProductsByCategory($id);
     }
 }
