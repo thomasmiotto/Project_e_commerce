@@ -36,6 +36,12 @@ a {
   padding: 10px;
 }
 
+.form > select {
+  border-radius: 100px;
+  border: 1px solid black;
+  padding: 10px;
+}
+
 .form > input[type="submit"] {
   width: 200px;
   margin-top: 60px;

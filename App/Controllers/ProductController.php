@@ -14,7 +14,7 @@ class ProductController
                 empty($_POST['name'])
                 || empty($_POST['price'])
                 || empty($_POST['description'])
-                || empty($_POST['tva'])
+                || empty($_POST['tva_id'])
                 || empty($_POST['stock'])
 
                 || !str_starts_with($_FILES['productImage']['type'], 'image/')
@@ -31,7 +31,7 @@ class ProductController
                 htmlspecialchars($_POST['name']),
                 (float)$_POST['price'],
                 htmlspecialchars($_POST['description']),
-                (int)$_POST['tva'],
+                (int)$_POST['tva_id'],
                 (int)$_POST['stock'],
                 $image
             );

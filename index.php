@@ -14,13 +14,17 @@ $route = '/';
 if (isset($_SERVER['PATH_INFO'])) {
     $route = $_SERVER['PATH_INFO'];
 
-} else if ($_SERVER['REQUEST_URI']) {
-    $route = $_SERVER['REQUEST_URI'];
+} else if ($_SERVER['REDIRECT_URL']) {
+    $route = $_SERVER['REDIRECT_URL'];
 }
 
 try {
     switch ($route) {
         case '/':
+            StaticController::showHome();
+            break;
+
+        case '/home':
             StaticController::showHome();
             break;
 

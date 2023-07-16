@@ -13,8 +13,14 @@ include_once __DIR__ . '/header.html.php';
             <label for="Description">Description</label>
             <input type="text" name="description" required>
 
-            <label for="tva">TVA</label>
-            <input type="number" name="tva" required>
+            <label for="tva_id">TVA</label>
+            <select name="tva_id" required>
+                <option value="1">2.1%</option>
+                <option value="2">5.5%</option>
+                <option value="3">8.5%</option>
+                <option value="4">10%</option>
+                <option value="5">20%</option>
+            </select>
 
             <label for="stock">Stock</label>
             <input type="number" name="stock" required>
